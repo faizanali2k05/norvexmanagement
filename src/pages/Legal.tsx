@@ -11,7 +11,7 @@ export function PrivacyPolicy() {
     {
       title: 'Information We Collect',
       content:
-        'We collect information you provide directly — such as your name, email address, phone number, and company details when you fill out our contact form or subscribe to our newsletter. We also collect analytical data about how you use our website, including pages visited, time spent, and referral sources.',
+        'We collect information you provide directly such as your name, email address, phone number, and company details when you fill out our contact form or subscribe to our newsletter. We also collect analytical data about how you use our website, including pages visited, time spent, and referral sources.',
     },
     {
       title: 'How We Use Your Information',

@@ -201,7 +201,7 @@ export default function Blog() {
       <PageHero
         label="Blog"
         title="Insights on digital growth, design, and technology."
-        description="Practical perspectives from our team — drawn from real engagements, not theory."
+        description="Practical perspectives from our team drawn from real engagements, not theory."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Blog' }]}
       />
 

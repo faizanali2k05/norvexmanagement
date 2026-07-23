@@ -5,9 +5,7 @@ import { services } from '@/data/services';
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
-  { label: 'Case Studies', path: '/case-studies' },
   { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Blog', path: '/blog' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -19,7 +17,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-white/10">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Logo className="h-12 w-auto mb-5" />
+            <Link to="/" aria-label="Norvex Management home" className="inline-block mb-5">
+              <Logo className="h-12 w-auto" />
+            </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               Norvex Management is a digital transformation agency helping businesses grow
               through innovative design, technology, automation, and strategic marketing.

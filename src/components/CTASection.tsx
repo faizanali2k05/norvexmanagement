@@ -8,7 +8,7 @@ interface CTASectionProps {
 
 export function CTASection({
   title = 'Let\'s Build Your Digital Advantage',
-  description = 'Tell us where you want to grow. We\'ll map the strategy, design, and technology to get you there — and deliver it end-to-end.',
+  description = 'Tell us where you want to grow. We\'ll map the strategy, design, and technology to get you there and deliver it end-to-end.',
 }: CTASectionProps) {
   return (
     <section className="section-padding bg-navy-pattern text-white relative overflow-hidden">

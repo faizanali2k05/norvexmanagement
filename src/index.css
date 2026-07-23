@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+/* Using Poppins from index.html */
 
 @tailwind base;
 @tailwind components;
@@ -18,25 +18,25 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-semibold;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-gold text-navy font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:bg-gold-600 hover:shadow-gold hover:-translate-y-0.5 active:translate-y-0 text-sm;
+    @apply inline-flex items-center justify-center gap-2 bg-gold text-white font-bold px-7 py-3.5 rounded-none transition-all duration-200 hover:bg-gold-600 text-sm border border-gold;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white hover:text-navy text-sm;
+    @apply inline-flex items-center justify-center gap-2 bg-navy border border-navy text-white font-bold px-7 py-3.5 rounded-none transition-all duration-200 hover:bg-charcoal text-sm;
   }
 
   .btn-outline-navy {
-    @apply inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:bg-navy hover:text-white text-sm;
+    @apply inline-flex items-center justify-center gap-2 bg-navy border border-navy text-white font-bold px-7 py-3.5 rounded-none transition-all duration-200 hover:bg-charcoal text-sm;
   }
 
   .section-label {
-    @apply inline-flex items-center gap-2 text-gold font-semibold text-sm uppercase tracking-widest mb-4;
+    @apply inline-flex items-center gap-2 text-navy font-bold text-sm uppercase tracking-widest mb-4;
   }
 
   .section-heading {
@@ -44,7 +44,7 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300;
+    @apply bg-white rounded-none border border-gray-200 hover:border-gray-400 transition-all duration-300;
   }
 
   .container-custom {
@@ -90,10 +90,10 @@
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #181C3B; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #F2C340; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f9f9f9; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 0px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
 /* Smooth page transitions */
 .page-enter {

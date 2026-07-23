@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
     role: 'Managing Director',
     company: 'Vertex Consulting',
     quote:
-      'Norvex didn\'t just rebuild our website — they rethought how we attract and convert clients. We tripled our qualified leads within four months. The strategic thinking was as valuable as the execution.',
+      'Norvex didn\'t just rebuild our website they rethought how we attract and convert clients. We tripled our qualified leads within four months. The strategic thinking was as valuable as the execution.',
     avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
@@ -20,7 +20,7 @@ export const testimonials: Testimonial[] = [
     role: 'Founder',
     company: 'PulseFit',
     quote:
-      'From zero to 50,000 downloads in a single quarter. Norvex handled everything — product, design, launch strategy — and the results spoke for themselves. They felt like a co-founder, not a vendor.',
+      'From zero to 50,000 downloads in a single quarter. Norvex handled everything product, design, launch strategy and the results spoke for themselves. They felt like a co-founder, not a vendor.',
     avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
@@ -98,7 +98,7 @@ export const faqItems: FAQItem[] = [
     category: 'Getting Started',
     question: 'How do we get started?',
     answer:
-      'Start with a discovery call. Use the Get a Quote button or contact us directly — tell us about your business and goals, and we will schedule a conversation to explore whether we are a good fit.',
+      'Start with a discovery call. Use the Get a Quote button or contact us directly tell us about your business and goals, and we will schedule a conversation to explore whether we are a good fit.',
   },
 ];
 

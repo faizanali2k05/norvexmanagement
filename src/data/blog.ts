@@ -33,11 +33,11 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1200',
     featured: true,
     content: [
-      'When businesses hear "digital transformation," they often reach for a technology checklist — a new CRM, a cloud migration, an app. But the organizations that succeed treat transformation as a business strategy exercise first, and a technology project second.',
-      'The right starting point is the customer journey. Where do prospects struggle to find you? Where do leads stall in your pipeline? Where do customers churn because of friction? These are the problems technology should solve — and mapping them clearly determines which investments actually move the needle.',
+      'When businesses hear "digital transformation," they often reach for a technology checklist a new CRM, a cloud migration, an app. But the organizations that succeed treat transformation as a business strategy exercise first, and a technology project second.',
+      'The right starting point is the customer journey. Where do prospects struggle to find you? Where do leads stall in your pipeline? Where do customers churn because of friction? These are the problems technology should solve and mapping them clearly determines which investments actually move the needle.',
       'Next comes process. Before automating a workflow, you should understand it. Many companies digitize broken processes and end up with faster broken processes. The transformational work happens when you redesign the workflow first, then apply technology to make the new version scalable.',
-      'Finally, technology choices follow strategy — not the other way around. The platform you pick matters less than whether your team will actually use it, whether it integrates with your existing stack, and whether it supports the customer experience you designed. A well-implemented modest tool beats a poorly-implemented premium one every time.',
-      'At Norvex Management, we start every engagement with strategy. The technology is the easy part. The hard part — and the part that determines ROI — is understanding your business deeply enough to know which digital changes will create real growth.',
+      'Finally, technology choices follow strategy not the other way around. The platform you pick matters less than whether your team will actually use it, whether it integrates with your existing stack, and whether it supports the customer experience you designed. A well-implemented modest tool beats a poorly-implemented premium one every time.',
+      'At Norvex Management, we start every engagement with strategy. The technology is the easy part. The hard part and the part that determines ROI is understanding your business deeply enough to know which digital changes will create real growth.',
     ],
   },
   {
@@ -94,7 +94,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'building-long-term-client-partnerships',
     title: 'Building Long-Term Client Partnerships, Not One-Off Projects',
     excerpt:
-      'Why the agency-client relationship matters more than any single deliverable — and how we approach it.',
+      'Why the agency-client relationship matters more than any single deliverable and how we approach it.',
     category: 'Business Growth',
     author: 'Norvex Team',
     date: '2024-10-02',

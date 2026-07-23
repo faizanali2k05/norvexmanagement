@@ -22,7 +22,7 @@ export default function FAQ() {
       <PageHero
         label="FAQ"
         title="Frequently asked questions, answered honestly."
-        description="Everything you might want to know before reaching out — from pricing and process to ownership and support."
+        description="Everything you might want to know before reaching out from pricing and process to ownership and support."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'FAQ' }]}
       />
 

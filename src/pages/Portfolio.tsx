@@ -18,7 +18,7 @@ export default function Portfolio() {
       <PageHero
         label="Portfolio"
         title="Selected work across industries and disciplines."
-        description="A look at projects we've delivered — each chosen because it solved a real business problem, not just because it looked good."
+        description="A look at projects we've delivered each chosen because it solved a real business problem, not just because it looked good."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Portfolio' }]}
       />
 
@@ -81,7 +81,7 @@ export default function Portfolio() {
 
       <CTASection
         title="Have a project in mind?"
-        description="Whether it's a brand refresh, a new app, or a full digital transformation — we'd love to hear about it."
+        description="Whether it's a brand refresh, a new app, or a full digital transformation we'd love to hear about it."
       />
 
       {/* Modal */}

@@ -28,7 +28,7 @@ export const services: Service[] = [
     title: 'Graphic Design',
     short: 'Visual identity and marketing collateral that communicates clearly and converts.',
     description:
-      'We craft brand-aligned visual assets — from logos and identity systems to social media creatives and print collateral — designed to make your business memorable and trustworthy at every touchpoint.',
+      'We craft brand-aligned visual assets from logos and identity systems to social media creatives and print collateral designed to make your business memorable and trustworthy at every touchpoint.',
     icon: PenTool,
     benefits: [
       'A cohesive visual identity that builds instant recognition',
@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: 'UI/UX Design',
     short: 'Research-driven interfaces that are intuitive, accessible, and built around your users.',
     description:
-      'Our UI/UX practice combines user research, information architecture, and interaction design to create digital products people actually enjoy using — improving adoption, retention, and satisfaction.',
+      'Our UI/UX practice combines user research, information architecture, and interaction design to create digital products people actually enjoy using improving adoption, retention, and satisfaction.',
     icon: LayoutDashboard,
     benefits: [
       'Interfaces validated against real user behavior',
@@ -88,7 +88,7 @@ export const services: Service[] = [
     title: 'Web Development',
     short: 'Fast, scalable, SEO-friendly websites and web applications built to grow with you.',
     description:
-      'We build websites and web applications using modern, performant frameworks — engineered for speed, search visibility, and long-term maintainability so your digital presence stays a growth asset, not a liability.',
+      'We build websites and web applications using modern, performant frameworks engineered for speed, search visibility, and long-term maintainability so your digital presence stays a growth asset, not a liability.',
     icon: Code2,
     benefits: [
       'Sub-second load times and 90+ performance scores',
@@ -118,7 +118,7 @@ export const services: Service[] = [
     title: 'App Development',
     short: 'Native and cross-platform mobile apps with smooth performance and clean UX.',
     description:
-      'From concept to launch, we design and develop mobile applications that deliver reliable performance, offline resilience, and intuitive experiences across iOS and Android — backed by a maintainable codebase.',
+      'From concept to launch, we design and develop mobile applications that deliver reliable performance, offline resilience, and intuitive experiences across iOS and Android backed by a maintainable codebase.',
     icon: Smartphone,
     benefits: [
       'Single codebase for iOS and Android to control cost',
@@ -148,7 +148,7 @@ export const services: Service[] = [
     title: 'Social Media Management',
     short: 'Content, community, and strategy that turns followers into a loyal audience.',
     description:
-      'We manage your social presence end-to-end — content planning, creative production, scheduling, community management, and reporting — so your channels stay active, on-brand, and working toward measurable business goals.',
+      'We manage your social presence end-to-end content planning, creative production, scheduling, community management, and reporting so your channels stay active, on-brand, and working toward measurable business goals.',
     icon: Share2,
     benefits: [
       'Consistent, on-brand content across all platforms',
@@ -178,7 +178,7 @@ export const services: Service[] = [
     title: 'Ads Management',
     short: 'Performance-driven ad campaigns across Meta, Google, and beyond.',
     description:
-      'We plan, launch, and optimize paid media campaigns designed to lower your cost per acquisition while scaling reach — with transparent reporting so you always know what every dollar is doing.',
+      'We plan, launch, and optimize paid media campaigns designed to lower your cost per acquisition while scaling reach with transparent reporting so you always know what every dollar is doing.',
     icon: Megaphone,
     benefits: [
       'Lower cost-per-acquisition through continuous optimization',
@@ -208,7 +208,7 @@ export const services: Service[] = [
     title: 'Business Profile Management',
     short: 'Local listings and profiles kept accurate, optimized, and review-ready.',
     description:
-      'We keep your Google Business Profile and directory listings accurate, complete, and optimized — managing reviews, posts, and updates so you rank higher in local search and convert more nearby customers.',
+      'We keep your Google Business Profile and directory listings accurate, complete, and optimized managing reviews, posts, and updates so you rank higher in local search and convert more nearby customers.',
     icon: Briefcase,
     benefits: [
       'Higher visibility in local and map search results',
@@ -238,7 +238,7 @@ export const services: Service[] = [
     title: 'Customized Management Systems',
     short: 'Tailored software that automates operations and centralizes your data.',
     description:
-      'We build custom management systems — CRMs, inventory tools, booking platforms, and internal dashboards — designed around your exact workflows, so your team spends less time on manual work and more time on what matters.',
+      'We build custom management systems CRMs, inventory tools, booking platforms, and internal dashboards designed around your exact workflows, so your team spends less time on manual work and more time on what matters.',
     icon: Settings2,
     benefits: [
       'Software shaped around your real workflows',

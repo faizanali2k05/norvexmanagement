@@ -26,9 +26,9 @@ export function Testimonials() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <Reveal>
             <p className="section-label justify-center">
-              <span className="w-8 h-px bg-gold" />
+              
               Client Voices
-              <span className="w-8 h-px bg-gold" />
+              
             </p>
             <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
               Partnerships built on trust and results.

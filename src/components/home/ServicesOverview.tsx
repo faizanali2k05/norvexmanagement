@@ -11,7 +11,7 @@ export function ServicesOverview() {
           <div className="lg:col-span-7">
             <Reveal>
               <p className="section-label">
-                <span className="w-8 h-px bg-gold" />
+                
                 What We Do
               </p>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
@@ -24,7 +24,7 @@ export function ServicesOverview() {
             <Reveal delay={1}>
               <p className="text-medium-gray text-lg leading-relaxed">
                 From brand identity to custom software, we cover every layer of your digital
-                presence — so you can work with one partner instead of coordinating five.
+                presence so you can work with one partner instead of coordinating five.
               </p>
               <Link
                 to="/services"

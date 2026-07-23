@@ -8,7 +8,7 @@ const reasons = [
     icon: BarChart3,
     title: 'Strategy before execution',
     description:
-      'Every engagement starts with understanding your business. We design and build toward measurable outcomes — not deliverables that look good but do nothing.',
+      'Every engagement starts with understanding your business. We design and build toward measurable outcomes not deliverables that look good but do nothing.',
   },
   {
     icon: Users,
@@ -59,7 +59,7 @@ export function WhyChooseUs() {
           <div>
             <Reveal>
               <p className="section-label">
-                <span className="w-8 h-px bg-gold" />
+                
                 Why Norvex
               </p>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
@@ -68,7 +68,7 @@ export function WhyChooseUs() {
               </h2>
               <p className="text-medium-gray text-lg mt-5 leading-relaxed">
                 We are not a delivery-only shop. We invest in understanding your business, your
-                customers, and your goals — then design and build the digital infrastructure that
+                customers, and your goals then design and build the digital infrastructure that
                 moves them forward.
               </p>
             </Reveal>

@@ -157,7 +157,7 @@ export default function CaseStudies() {
       <PageHero
         label="Case Studies"
         title="Real engagements. Real outcomes. Real numbers."
-        description="We don't just show pretty pictures — we break down the problem, the thinking, and the business results that followed."
+        description="We don't just show pretty pictures we break down the problem, the thinking, and the business results that followed."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Case Studies' }]}
       />
 

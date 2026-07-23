@@ -12,7 +12,7 @@ export default function Services() {
       <PageHero
         label="Our Services"
         title="Digital capabilities that cover every layer of your growth."
-        description="Eight specialized services, designed to work together or standalone — each delivered with the same strategy-first approach."
+        description="Eight specialized services, designed to work together or standalone each delivered with the same strategy-first approach."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Services' }]}
       />
 

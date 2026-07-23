@@ -11,7 +11,7 @@ export function FeaturedProjects() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <Reveal>
             <p className="section-label">
-              <span className="w-8 h-px bg-gold" />
+              
               Featured Work
             </p>
             <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2 max-w-xl">

@@ -53,7 +53,7 @@ export default function About() {
             <div>
               <Reveal>
                 <p className="section-label">
-                  <span className="w-8 h-px bg-gold" />
+                  
                   Our Story
                 </p>
                 <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
@@ -68,7 +68,7 @@ export default function About() {
                     did nothing for growth. The work was beautiful. The results were absent.
                   </p>
                   <p>
-                    We set out to build something different — an agency where strategy leads and
+                    We set out to build something different an agency where strategy leads and
                     execution follows. Where every design decision, line of code, and ad campaign
                     ties back to a measurable business outcome. Where clients are treated as
                     long-term partners rather than one-off projects.
@@ -109,7 +109,7 @@ export default function About() {
                 <h2 className="font-display font-bold text-2xl text-white mb-4">Our Vision</h2>
                 <p className="text-white/70 text-lg leading-relaxed">
                   To be the digital partner that businesses trust not just to deliver work, but to
-                  think alongside them — shaping the strategy that makes the work worth doing.
+                  think alongside them shaping the strategy that makes the work worth doing.
                 </p>
               </div>
             </Reveal>
@@ -123,9 +123,9 @@ export default function About() {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <Reveal>
               <p className="section-label justify-center">
-                <span className="w-8 h-px bg-gold" />
+                
                 What We Stand For
-                <span className="w-8 h-px bg-gold" />
+                
               </p>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
                 Core values that shape every engagement.
@@ -157,7 +157,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <p className="section-label">
-                <span className="w-8 h-px bg-gold" />
+                
                 Why Choose Us
               </p>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
@@ -165,10 +165,10 @@ export default function About() {
               </h2>
               <div className="space-y-4 mt-8">
                 {[
-                  'Strategy-led approach — we understand before we build',
-                  'Full-service coverage — design, dev, marketing, systems',
+                  'Strategy-led approach we understand before we build',
+                  'Full-service coverage design, dev, marketing, systems',
                   'Transparent communication with weekly checkpoints',
-                  'You own everything — source files, IP, and assets',
+                  'You own everything source files, IP, and assets',
                   'Ongoing support after launch, not just a handoff',
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -199,15 +199,15 @@ export default function About() {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <Reveal>
               <p className="section-label justify-center">
-                <span className="w-8 h-px bg-gold" />
+                
                 The People
-                <span className="w-8 h-px bg-gold" />
+                
               </p>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2">
                 A senior team that stays hands-on.
               </h2>
               <p className="text-medium-gray text-lg mt-5">
-                You work directly with the people doing the work — not account managers relaying messages.
+                You work directly with the people doing the work not account managers relaying messages.
               </p>
             </Reveal>
           </div>
@@ -232,7 +232,7 @@ export default function About() {
           </div>
           <Reveal delay={2}>
             <p className="text-center text-medium-gray text-sm mt-10">
-              Team photos and bios are placeholders — replace them with your actual team members.
+              Team photos and bios are placeholders replace them with your actual team members.
             </p>
           </Reveal>
         </div>

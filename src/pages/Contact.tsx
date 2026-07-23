@@ -51,7 +51,7 @@ export default function Contact() {
       <PageHero
         label="Contact"
         title="Let's talk about your growth goals."
-        description="Tell us where you want to go. We'll help you figure out the digital path to get there — no pressure, no sales pitch."
+        description="Tell us where you want to go. We'll help you figure out the digital path to get there no pressure, no sales pitch."
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Contact' }]}
       />
 
@@ -92,7 +92,7 @@ export default function Contact() {
             <div className="lg:col-span-7">
               <Reveal>
                 <p className="section-label">
-                  <span className="w-8 h-px bg-gold" />
+                  
                   Send a Message
                 </p>
                 <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-8">

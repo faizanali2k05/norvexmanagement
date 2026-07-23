@@ -13,7 +13,7 @@ export function Hero() {
           {/* Left content */}
           <div>
             <p className="section-label animate-fade-up">
-              <span className="w-8 h-px bg-gold" />
+              
               Digital Transformation Agency
             </p>
             <h1
@@ -28,7 +28,7 @@ export function Hero() {
               style={{ animationDelay: '0.2s', opacity: 0 }}
             >
               We help businesses grow through innovative design, technology, automation, and
-              strategic marketing — building digital experiences that convert and systems that scale.
+              strategic marketing building digital experiences that convert and systems that scale.
             </p>
             <div
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10 animate-fade-up"

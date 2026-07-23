@@ -72,7 +72,7 @@ export default function ServiceDetail() {
         <div className="container-custom">
           <Reveal>
             <p className="section-label">
-              <span className="w-8 h-px bg-gold" />
+              
               Benefits
             </p>
             <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-12">
@@ -99,7 +99,7 @@ export default function ServiceDetail() {
         <div className="container-custom">
           <Reveal>
             <p className="section-label">
-              <span className="w-8 h-px bg-gold" />
+              
               Process
             </p>
             <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-12">
@@ -128,14 +128,14 @@ export default function ServiceDetail() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <Reveal>
               <p className="section-label">
-                <span className="w-8 h-px bg-gold" />
+                
                 Deliverables
               </p>
               <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-6">
                 What you receive at the end.
               </h2>
               <p className="text-medium-gray text-lg leading-relaxed">
-                Clear, tangible outputs — no vague promises. You know exactly what you are getting
+                Clear, tangible outputs no vague promises. You know exactly what you are getting
                 before we start.
               </p>
             </Reveal>
@@ -162,7 +162,7 @@ export default function ServiceDetail() {
             <div className="lg:col-span-5">
               <Reveal>
                 <p className="section-label">
-                  <span className="w-8 h-px bg-gold" />
+                  
                   FAQ
                 </p>
                 <h2 className="section-heading text-3xl md:text-4xl mt-2">
