@@ -24,7 +24,8 @@ const team = [
     name: 'Ahmad Raza', 
     role: 'Co-founder', 
     avatar: 'https://wordsofahmad.netlify.app/assets/ahmad-DvPJdabi.jpg',
-    linkedin: 'https://www.linkedin.com/in/ahmadraza2k09'
+    linkedin: 'https://www.linkedin.com/in/ahmadraza2k09',
+    position: 'object-top'
   },
 ];
 
@@ -227,7 +228,7 @@ export default function About() {
                     <img
                       src={member.avatar}
                       alt={member.name}
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`w-full h-80 object-cover ${member.position || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
