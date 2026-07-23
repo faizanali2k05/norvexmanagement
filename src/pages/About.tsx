@@ -2,7 +2,7 @@ import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
 import { CTASection } from '@/components/CTASection';
 import { Link } from 'react-router-dom';
-import { Target, Eye, Heart, Users, Lightbulb, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
+import { Target, Eye, Heart, Users, Lightbulb, ShieldCheck, TrendingUp, Handshake, Linkedin } from 'lucide-react';
 import { OurProcess } from '@/components/home/OurProcess';
 import { StatsCounter } from '@/components/home/StatsCounter';
 
@@ -14,8 +14,18 @@ const values = [
 ];
 
 const team = [
-  { name: 'Founder & CEO', role: 'Strategy & Growth', avatar: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Ahmad', role: 'Co-founder', avatar: 'https://wordsofahmad.netlify.app/assets/ahmad-DvPJdabi.jpg' },
+  { 
+    name: 'Muhammad Sohaib', 
+    role: 'Founder & CEO', 
+    avatar: 'https://instagram.fmux1-1.fna.fbcdn.net/v/t51.82787-19/711925659_18096389359946753_2510541638306611633_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0&_nc_ht=instagram.fmux1-1.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2gFnWwAanj0JLxkPXUiVei-PhCZA-M5mL8I6A5IgmsAQcSUBGp8jEhPG_0Lo9h_udVs&_nc_ohc=l_HcAoj8pEMQ7kNvwEV_Az8&_nc_gid=iH7f8-GaUp5Me8fQFpiTBA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AQBfJAwAXBfXhqILIl2i1cJaGfJoLjloCYyAvpXfWP5Fxg&oe=6A683431&_nc_sid=7a9f4b',
+    linkedin: '#'
+  },
+  { 
+    name: 'Ahmad Raza', 
+    role: 'Co-founder', 
+    avatar: 'https://wordsofahmad.netlify.app/assets/ahmad-DvPJdabi.jpg',
+    linkedin: 'https://www.linkedin.com/in/ahmadraza2k09'
+  },
 ];
 
 export default function About() {
@@ -223,7 +233,12 @@ export default function About() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <h3 className="font-display font-semibold text-navy text-lg">{member.name}</h3>
-                  <p className="text-medium-gray text-sm mt-1">{member.role}</p>
+                  <p className="text-medium-gray text-sm mt-1 mb-3">{member.role}</p>
+                  {member.linkedin && (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-navy/5 text-navy hover:bg-navy hover:text-white transition-colors">
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </Reveal>
             ))}
