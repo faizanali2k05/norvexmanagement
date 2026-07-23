@@ -15,9 +15,7 @@ const values = [
 
 const team = [
   { name: 'Founder & CEO', role: 'Strategy & Growth', avatar: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Lead Designer', role: 'UI/UX & Brand', avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Lead Developer', role: 'Web & App Engineering', avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Marketing Lead', role: 'Ads & Social Media', avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Ahmad', role: 'Co-founder', avatar: 'https://wordsofahmad.netlify.app/assets/ahmad-DvPJdabi.jpg' },
 ];
 
 export default function About() {
@@ -91,8 +89,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8">
             <Reveal>
               <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-card h-full">
-                <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center mb-6">
-                  <Target className="h-7 w-7 text-gold" />
+                <div className="mb-6">
+                  <Target className="h-10 w-10 text-gold" />
                 </div>
                 <h2 className="font-display font-bold text-2xl text-navy mb-4">Our Mission</h2>
                 <p className="text-medium-gray text-lg leading-relaxed">
@@ -103,8 +101,8 @@ export default function About() {
             </Reveal>
             <Reveal delay={1}>
               <div className="bg-navy-pattern text-white rounded-3xl p-8 lg:p-10 h-full">
-                <div className="w-14 h-14 rounded-2xl bg-gold flex items-center justify-center mb-6">
-                  <Eye className="h-7 w-7 text-navy" />
+                <div className="mb-6">
+                  <Eye className="h-10 w-10 text-gold" />
                 </div>
                 <h2 className="font-display font-bold text-2xl text-white mb-4">Our Vision</h2>
                 <p className="text-white/70 text-lg leading-relaxed">
@@ -138,8 +136,8 @@ export default function About() {
               return (
                 <Reveal key={v.title} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
                   <div className="card p-7 h-full text-center">
-                    <div className="w-14 h-14 rounded-2xl bg-gold/15 flex items-center justify-center mx-auto mb-5">
-                      <Icon className="h-7 w-7 text-gold-700" />
+                    <div className="mx-auto mb-5 flex justify-center">
+                      <Icon className="h-10 w-10 text-gold" />
                     </div>
                     <h3 className="font-display font-semibold text-navy text-lg mb-2">{v.title}</h3>
                     <p className="text-medium-gray text-sm leading-relaxed">{v.description}</p>

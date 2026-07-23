@@ -28,7 +28,7 @@ export function PageHero({ label, title, description, breadcrumbs }: PageHeroPro
             ))}
           </nav>
         )}
-        {label && <p className="section-label">{label}</p>}
+        {label && <p className="section-label !text-white">{label}</p>}
         <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight max-w-4xl">
           {title}
         </h1>

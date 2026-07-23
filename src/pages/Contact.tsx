@@ -38,9 +38,25 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', company: '', service: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    const subject = encodeURIComponent(`New Inquiry from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nService: ${form.service}\n\nProject Details:\n${form.message}`
+    );
+    window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleWhatsAppSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!form.name || !form.message) {
+      alert("Please fill in your name and project details first.");
+      return;
+    }
+    const text = encodeURIComponent(
+      `Hi Norvex Management, my name is ${form.name}.\n\nService: ${form.service}\n\nProject Details:\n${form.message}`
+    );
+    window.open(`https://wa.me/923405463601?text=${text}`, '_blank');
   };
 
   const inputClass =
@@ -69,8 +85,8 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="card p-6 h-full flex flex-col items-start group"
                   >
-                    <div className={`w-12 h-12 rounded-xl ${card.accent} flex items-center justify-center mb-4`}>
-                      <Icon className="h-6 w-6" />
+                    <div className="mb-4">
+                      <Icon className="h-8 w-8 text-gold" />
                     </div>
                     <p className="text-medium-gray text-xs uppercase tracking-wider mb-1">{card.label}</p>
                     <p className="font-display font-semibold text-navy text-sm group-hover:text-gold-700 transition-colors break-all">
@@ -124,7 +140,7 @@ export default function Contact() {
                 </Reveal>
               ) : (
                 <Reveal delay={1}>
-                  <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-card space-y-5">
+                  <form onSubmit={handleEmailSubmit} className="bg-white rounded-none p-8 border border-gray-200 space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
                         <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
@@ -205,10 +221,16 @@ export default function Contact() {
                         placeholder="Tell us about your goals, timeline, and what you're looking to achieve..."
                       />
                     </div>
-                    <button type="submit" className="btn-primary w-full justify-center text-base py-4">
-                      Send Message
-                      <Send className="h-4 w-4" />
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                      <button type="submit" className="btn-primary flex-1 justify-center py-4 text-xs sm:text-sm whitespace-nowrap">
+                        <Mail className="h-4 w-4" />
+                        Send via Email
+                      </button>
+                      <button type="button" onClick={handleWhatsAppSubmit} className="btn-primary flex-1 justify-center py-4 !bg-green-600 !border-green-600 hover:!bg-green-700 text-white text-xs sm:text-sm whitespace-nowrap">
+                        <MessageCircle className="h-4 w-4" />
+                        Send via WhatsApp
+                      </button>
+                    </div>
                   </form>
                 </Reveal>
               )}
@@ -252,12 +274,16 @@ export default function Contact() {
                     <p className="text-medium-gray text-sm leading-relaxed mb-4">
                       Texas, United States
                     </p>
-                    <div className="rounded-2xl overflow-hidden bg-navy-pattern h-48 flex items-center justify-center">
-                      <div className="text-center">
-                        <MapPin className="h-8 w-8 text-gold mx-auto mb-2" />
-                        <p className="text-white/60 text-sm">Texas, USA</p>
-                        <p className="text-white/40 text-xs mt-1">Replace with your Google Maps embed</p>
-                      </div>
+                    <div className="rounded-none overflow-hidden bg-gray-100 h-64 border border-gray-200">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13735166.425232923!2d-106.6358178141443!3d31.116524249156098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864070360b823249%3A0x16eb1c8f1808de3c!2sTexas%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
                     </div>
                   </div>
                 </Reveal>

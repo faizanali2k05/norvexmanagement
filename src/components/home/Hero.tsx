@@ -12,8 +12,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <div>
-            <p className="section-label animate-fade-up">
-              
+            <p className="section-label !text-white animate-fade-up">
               Digital Transformation Agency
             </p>
             <h1

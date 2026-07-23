@@ -16,10 +16,8 @@ export function OurProcess() {
       <div className="container-custom relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <Reveal>
-            <p className="section-label justify-center">
-              
+            <p className="section-label !text-white justify-center">
               How We Work
-              
             </p>
             <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mt-2">
               A process built for outcomes, <br className="hidden md:block" />

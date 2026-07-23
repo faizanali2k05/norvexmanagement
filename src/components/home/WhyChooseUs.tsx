@@ -79,8 +79,8 @@ export function WhyChooseUs() {
                 return (
                   <Reveal key={r.title} delay={((i % 2) + 1) as 1 | 2}>
                     <div className="flex gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-gold/15 flex items-center justify-center shrink-0">
-                        <Icon className="h-5 w-5 text-gold-700" />
+                      <div className="mb-5 group-hover:scale-110 transition-all duration-300">
+                        <Icon className="h-10 w-10 text-gold transition-colors" />
                       </div>
                       <div>
                         <h3 className="font-display font-semibold text-navy text-base mb-1.5">

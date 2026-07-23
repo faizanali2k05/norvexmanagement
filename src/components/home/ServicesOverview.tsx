@@ -46,8 +46,8 @@ export function ServicesOverview() {
                   to={`/services/${service.slug}`}
                   className="card p-7 h-full flex flex-col group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-navy/5 group-hover:bg-gold/15 flex items-center justify-center mb-5 transition-colors duration-300">
-                    <Icon className="h-6 w-6 text-navy group-hover:text-gold-700 transition-colors duration-300" />
+                  <div className="shrink-0 mb-5 group-hover:scale-110 transition-all duration-300">
+                    <Icon className="h-10 w-10 text-gold transition-colors" />
                   </div>
                   <h3 className="font-display font-semibold text-navy text-lg mb-2 group-hover:text-gold-700 transition-colors">
                     {service.title}

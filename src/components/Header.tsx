@@ -46,7 +46,7 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           <Link to="/" aria-label="Norvex Management home" className="flex items-center gap-2 shrink-0">
-            <Logo className="h-10 w-auto" />
+            <Logo className="h-14 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main">

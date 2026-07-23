@@ -14,7 +14,7 @@ export function CTASection({
     <section className="section-padding bg-navy-pattern text-white relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="section-label justify-center">Get Started</p>
+          <p className="section-label !text-white justify-center">Get Started</p>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
             {title}
           </h2>
