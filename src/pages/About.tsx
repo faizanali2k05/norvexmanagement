@@ -54,7 +54,7 @@ export default function About() {
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 bg-gold rounded-2xl p-6 shadow-gold hidden sm:block">
-                  <p className="font-display font-bold text-3xl text-navy">2019</p>
+                  <p className="font-display font-bold text-3xl text-navy">2026</p>
                   <p className="text-navy/70 text-xs mt-1">Founded</p>
                 </div>
               </div>

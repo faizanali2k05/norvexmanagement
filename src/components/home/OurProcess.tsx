@@ -33,12 +33,23 @@ export function OurProcess() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <Reveal key={step.number} delay={((i % 3) + 1) as 1 | 2 | 3}>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-7 border border-white/10 hover:border-gold/30 hover:bg-white/[0.07] transition-all duration-300 h-full">
-                <span className="font-display font-bold text-5xl text-gold/20 block mb-3">
-                  {step.number}
-                </span>
-                <h3 className="font-display font-semibold text-xl text-white mb-2">{step.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
+              <div className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-gold/50 transition-all duration-500 h-full overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(235,167,0,0.15)] hover:-translate-y-2">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="font-display font-bold text-5xl text-gold/20 group-hover:text-gold/40 transition-colors duration-500">
+                      {step.number}
+                    </span>
+                  </div>
+                  
+                  <h3 className="font-display font-semibold text-2xl text-white mb-3 group-hover:text-gold transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/70 text-sm leading-relaxed mt-auto">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}

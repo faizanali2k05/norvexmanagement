@@ -109,7 +109,7 @@ export const services: Service[] = [
       'Documentation and training',
     ],
     faqs: [
-      { q: 'Which CMS do you support?', a: 'We work with WordPress, Webflow, and headless CMS options depending on your needs.' },
+      { q: 'Which CMS do you support?', a: 'We build custom CMS systems using React, rather than relying on WordPress.' },
       { q: 'Do you offer ongoing maintenance?', a: 'Yes. Monthly maintenance and support plans are available after launch.' },
     ],
   },
@@ -199,7 +199,6 @@ export const services: Service[] = [
       'Conversion-optimized landing pages',
     ],
     faqs: [
-      { q: 'What is the minimum ad budget you manage?', a: 'We work with monthly ad budgets starting from $1,000, with management fees scaled accordingly.' },
       { q: 'Which platforms do you cover?', a: 'Meta (Facebook/Instagram), Google Ads, YouTube, and LinkedIn depending on your audience.' },
     ],
   },
@@ -230,7 +229,7 @@ export const services: Service[] = [
     ],
     faqs: [
       { q: 'Do you respond to reviews for me?', a: 'Yes. We draft professional responses to all reviews for your approval before posting.' },
-      { q: 'How long until I see local ranking improvement?', a: 'Most clients see noticeable improvement within 60–90 days of consistent optimization.' },
+      { q: 'How long until I see local ranking improvement?', a: 'Most clients see noticeable improvement within 30 to 60 days of consistent optimization.' },
     ],
   },
   {

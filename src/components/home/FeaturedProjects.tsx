@@ -10,7 +10,7 @@ export function FeaturedProjects() {
       industry: 'Education / Social Good',
       description: 'An interactive explorer for Sustainable Development Goals.',
       results: 'View Project',
-      image: 'https://image.thum.io/get/width/1200/crop/800/https://sdgexplorer.vercel.app/',
+      image: 'https://i.pinimg.com/736x/96/5e/60/965e60741e9f647a67c4303403663933.jpg',
       link: 'https://sdgexplorer.vercel.app/'
     },
     {
@@ -20,7 +20,7 @@ export function FeaturedProjects() {
       industry: 'Education Management',
       description: 'A comprehensive campus management and gate passing system.',
       results: 'View Project',
-      image: 'https://image.thum.io/get/width/1200/crop/800/https://trycampusgate.vercel.app/',
+      image: 'https://i.pinimg.com/736x/f5/b9/dd/f5b9dd9d5fc732481ea925a85127cf94.jpg',
       link: 'https://trycampusgate.vercel.app/'
     }
   ];
@@ -56,7 +56,7 @@ export function FeaturedProjects() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

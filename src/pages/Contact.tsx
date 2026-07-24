@@ -21,8 +21,8 @@ const contactCards = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'Connect with us',
-    href: '#',
+    value: 'norvexmanagement',
+    href: 'https://www.linkedin.com/company/norvexmanagement/',
     accent: 'bg-navy/10 text-navy',
   },
 ];
@@ -79,7 +79,7 @@ export default function Contact() {
                       <Icon className="h-8 w-8 text-gold" />
                     </div>
                     <p className="text-medium-gray text-xs uppercase tracking-wider mb-1">{card.label}</p>
-                    <p className="font-display font-semibold text-navy text-sm group-hover:text-gold-700 transition-colors break-all">
+                    <p className="font-display font-semibold text-navy text-xs sm:text-sm group-hover:text-gold-700 transition-colors truncate w-full">
                       {card.value}
                     </p>
                   </a>
