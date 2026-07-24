@@ -1,38 +1,57 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
-import { portfolioItems } from '@/data/portfolio';
 
 export function FeaturedProjects() {
-  const featured = portfolioItems.slice(0, 3);
+  const featured = [
+    {
+      id: 'sdg-explorer',
+      title: 'SDG Explorer',
+      category: 'Website',
+      industry: 'Education / Social Good',
+      description: 'An interactive explorer for Sustainable Development Goals.',
+      results: 'View Project',
+      image: 'https://image.thum.io/get/width/1200/crop/800/https://sdgexplorer.vercel.app/',
+      link: 'https://sdgexplorer.vercel.app/'
+    },
+    {
+      id: 'campusgate',
+      title: 'Management System',
+      category: 'Web App',
+      industry: 'Education Management',
+      description: 'A comprehensive campus management and gate passing system.',
+      results: 'View Project',
+      image: 'https://image.thum.io/get/width/1200/crop/800/https://trycampusgate.vercel.app/',
+      link: 'https://trycampusgate.vercel.app/'
+    }
+  ];
+
   return (
     <section className="section-padding bg-ivory">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <Reveal>
-            <p className="section-label">
-              
-              Featured Work
-            </p>
+            <p className="section-label">Featured Work</p>
             <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl mt-2 max-w-xl">
               Work that delivered real business results.
             </h2>
           </Reveal>
           <Reveal delay={1}>
-            <Link
-              to="/portfolio"
+            <a
+              href="https://linkin.bio/norvexmanagement/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-outline-navy shrink-0"
             >
               View all projects
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {featured.map((item, i) => (
-            <Reveal key={item.id} delay={((i % 3) + 1) as 1 | 2 | 3}>
-              <Link to="/portfolio" className="group block">
+            <Reveal key={item.id} delay={((i % 2) + 1) as 1 | 2}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="group block">
                 <div className="relative rounded-2xl overflow-hidden shadow-card mb-5">
                   <img
                     src={item.image}
@@ -53,7 +72,7 @@ export function FeaturedProjects() {
                 </h3>
                 <p className="text-medium-gray text-sm leading-relaxed">{item.description}</p>
                 <p className="text-navy text-sm font-semibold mt-3">{item.results}</p>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

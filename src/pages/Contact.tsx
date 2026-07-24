@@ -1,16 +1,9 @@
 import { useState } from 'react';
-import { Mail, Phone, Instagram, Linkedin, MapPin, Send, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { Mail, Instagram, Linkedin, MapPin, Send } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
 
 const contactCards = [
-  {
-    icon: Phone,
-    label: 'WhatsApp',
-    value: '+92 340 5463601',
-    href: 'https://wa.me/923405463601',
-    accent: 'bg-green-50 text-green-700',
-  },
   {
     icon: Mail,
     label: 'Email',
@@ -35,28 +28,25 @@ const contactCards = [
 ];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', company: '', service: '', message: '' });
+  const [queryForm, setQueryForm] = useState({ name: '', email: '', query: '' });
+  const [workForm, setWorkForm] = useState({ name: '', email: '', service: '' });
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleQuerySubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`New Inquiry from ${form.name}`);
+    const subject = encodeURIComponent(`New Query from ${queryForm.name}`);
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nService: ${form.service}\n\nProject Details:\n${form.message}`
+      `Name: ${queryForm.name}\nEmail: ${queryForm.email}\n\nQuery:\n${queryForm.query}`
     );
     window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
   };
 
-  const handleWhatsAppSubmit = (e: React.MouseEvent) => {
+  const handleWorkSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.message) {
-      alert("Please fill in your name and project details first.");
-      return;
-    }
-    const text = encodeURIComponent(
-      `Hi Norvex Management, my name is ${form.name}.\n\nService: ${form.service}\n\nProject Details:\n${form.message}`
+    const subject = encodeURIComponent(`Work Inquiry from ${workForm.name}`);
+    const body = encodeURIComponent(
+      `Name: ${workForm.name}\nEmail: ${workForm.email}\nSpecialty: ${workForm.service}\n\nI am interested in working with you.`
     );
-    window.open(`https://wa.me/923405463601?text=${text}`, '_blank');
+    window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const inputClass =
@@ -74,11 +64,11 @@ export default function Contact() {
       {/* Contact cards */}
       <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-3 gap-6">
             {contactCards.map((card, i) => {
               const Icon = card.icon;
               return (
-                <Reveal key={card.label} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
+                <Reveal key={card.label} delay={((i % 3) + 1) as 1 | 2 | 3}>
                   <a
                     href={card.href}
                     target={card.href.startsWith('http') ? '_blank' : undefined}
@@ -100,195 +90,139 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Form + Info */}
+      {/* Forms Section */}
       <section className="section-padding bg-ivory">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-12 gap-12">
-            {/* Form */}
-            <div className="lg:col-span-7">
+          <div className="grid lg:grid-cols-2 gap-12">
+            
+            {/* Ask a Query Form */}
+            <div>
               <Reveal>
-                <p className="section-label">
-                  
-                  Send a Message
-                </p>
+                <p className="section-label">Ask a Question</p>
                 <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-8">
-                  Tell us about your project.
+                  Have a Query?
                 </h2>
               </Reveal>
-
-              {submitted ? (
-                <Reveal delay={1}>
-                  <div className="bg-white rounded-3xl p-10 text-center shadow-card">
-                    <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
-                      <CheckCircle2 className="h-8 w-8 text-green-600" />
-                    </div>
-                    <h3 className="font-display font-bold text-2xl text-navy mb-3">Message sent!</h3>
-                    <p className="text-medium-gray leading-relaxed max-w-md mx-auto">
-                      Thank you for reaching out. We&apos;ll get back to you within 24 hours. For urgent
-                      matters, message us directly on WhatsApp.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setSubmitted(false);
-                        setForm({ name: '', email: '', company: '', service: '', message: '' });
-                      }}
-                      className="btn-outline-navy mt-6"
-                    >
-                      Send another message
-                    </button>
+              <Reveal delay={1}>
+                <form onSubmit={handleQuerySubmit} className="bg-white rounded-none p-8 border border-gray-200 space-y-5 h-full">
+                  <div>
+                    <label htmlFor="q-name" className="block text-sm font-semibold text-navy mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      id="q-name"
+                      type="text"
+                      required
+                      value={queryForm.name}
+                      onChange={(e) => setQueryForm({ ...queryForm, name: e.target.value })}
+                      className={inputClass}
+                      placeholder="Jane Doe"
+                    />
                   </div>
-                </Reveal>
-              ) : (
-                <Reveal delay={1}>
-                  <form onSubmit={handleEmailSubmit} className="bg-white rounded-none p-8 border border-gray-200 space-y-5">
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          id="name"
-                          type="text"
-                          required
-                          value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className={inputClass}
-                          placeholder="Jane Doe"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2">
-                          Email *
-                        </label>
-                        <input
-                          id="email"
-                          type="email"
-                          required
-                          value={form.email}
-                          onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          className={inputClass}
-                          placeholder="jane@company.com"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="company" className="block text-sm font-semibold text-navy mb-2">
-                          Company
-                        </label>
-                        <input
-                          id="company"
-                          type="text"
-                          value={form.company}
-                          onChange={(e) => setForm({ ...form, company: e.target.value })}
-                          className={inputClass}
-                          placeholder="Your company"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="service" className="block text-sm font-semibold text-navy mb-2">
-                          Service of Interest
-                        </label>
-                        <select
-                          id="service"
-                          value={form.service}
-                          onChange={(e) => setForm({ ...form, service: e.target.value })}
-                          className={inputClass}
-                        >
-                          <option value="">Select a service</option>
-                          <option>Graphic Design</option>
-                          <option>UI/UX Design</option>
-                          <option>Web Development</option>
-                          <option>App Development</option>
-                          <option>Social Media Management</option>
-                          <option>Ads Management</option>
-                          <option>Business Profile Management</option>
-                          <option>Customized Management Systems</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">
-                        Project Details *
-                      </label>
-                      <textarea
-                        id="message"
-                        required
-                        rows={5}
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className={inputClass}
-                        placeholder="Tell us about your goals, timeline, and what you're looking to achieve..."
-                      />
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                      <button type="submit" className="btn-primary flex-1 justify-center py-4 text-xs sm:text-sm whitespace-nowrap">
-                        <Mail className="h-4 w-4" />
-                        Send via Email
-                      </button>
-                      <button type="button" onClick={handleWhatsAppSubmit} className="btn-primary flex-1 justify-center py-4 !bg-green-600 !border-green-600 hover:!bg-green-700 text-white text-xs sm:text-sm whitespace-nowrap">
-                        <MessageCircle className="h-4 w-4" />
-                        Send via WhatsApp
-                      </button>
-                    </div>
-                  </form>
-                </Reveal>
-              )}
+                  <div>
+                    <label htmlFor="q-email" className="block text-sm font-semibold text-navy mb-2">
+                      Email *
+                    </label>
+                    <input
+                      id="q-email"
+                      type="email"
+                      required
+                      value={queryForm.email}
+                      onChange={(e) => setQueryForm({ ...queryForm, email: e.target.value })}
+                      className={inputClass}
+                      placeholder="jane@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="q-query" className="block text-sm font-semibold text-navy mb-2">
+                      Your Query *
+                    </label>
+                    <textarea
+                      id="q-query"
+                      required
+                      rows={5}
+                      value={queryForm.query}
+                      onChange={(e) => setQueryForm({ ...queryForm, query: e.target.value })}
+                      className={inputClass}
+                      placeholder="What would you like to ask?"
+                    />
+                  </div>
+                  <button type="submit" className="btn-primary w-full justify-center py-4">
+                    <Send className="h-4 w-4" />
+                    Submit Query
+                  </button>
+                </form>
+              </Reveal>
             </div>
 
-            {/* Info sidebar */}
-            <div className="lg:col-span-5">
-              <div className="space-y-6 sticky top-28">
-                {/* WhatsApp CTA */}
-                <Reveal delay={1}>
-                  <div className="bg-navy-pattern text-white rounded-3xl p-8">
-                    <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center mb-4">
-                      <MessageCircle className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-display font-semibold text-lg mb-2">Prefer WhatsApp?</h3>
-                    <p className="text-white/60 text-sm leading-relaxed mb-5">
-                      Get a faster response by messaging us directly on WhatsApp. We typically reply
-                      within a few hours during business days.
-                    </p>
-                    <a
-                      href="https://wa.me/923405463601"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-green-500 text-white font-semibold px-5 py-3 rounded-xl hover:bg-green-600 transition-all duration-300 text-sm w-full justify-center"
+            {/* Work With Us Form */}
+            <div>
+              <Reveal>
+                <p className="section-label">Work With Us</p>
+                <h2 className="section-heading text-3xl md:text-4xl mt-2 mb-8">
+                  Start a Project.
+                </h2>
+              </Reveal>
+              <Reveal delay={1}>
+                <form onSubmit={handleWorkSubmit} className="bg-white rounded-none p-8 border border-gray-200 space-y-5 h-full">
+                  <div>
+                    <label htmlFor="w-name" className="block text-sm font-semibold text-navy mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      id="w-name"
+                      type="text"
+                      required
+                      value={workForm.name}
+                      onChange={(e) => setWorkForm({ ...workForm, name: e.target.value })}
+                      className={inputClass}
+                      placeholder="Jane Doe"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="w-email" className="block text-sm font-semibold text-navy mb-2">
+                      Email *
+                    </label>
+                    <input
+                      id="w-email"
+                      type="email"
+                      required
+                      value={workForm.email}
+                      onChange={(e) => setWorkForm({ ...workForm, email: e.target.value })}
+                      className={inputClass}
+                      placeholder="jane@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="w-service" className="block text-sm font-semibold text-navy mb-2">
+                      Speciality (Service) *
+                    </label>
+                    <select
+                      id="w-service"
+                      required
+                      value={workForm.service}
+                      onChange={(e) => setWorkForm({ ...workForm, service: e.target.value })}
+                      className={inputClass}
                     >
-                      <MessageCircle className="h-4 w-4" />
-                      Chat on WhatsApp
-                    </a>
+                      <option value="">Select a service</option>
+                      <option>Graphic Design</option>
+                      <option>UI/UX Design</option>
+                      <option>Web Development</option>
+                      <option>App Development</option>
+                      <option>Social Media Management</option>
+                      <option>Ads Management</option>
+                      <option>Business Profile Management</option>
+                      <option>Customized Management Systems</option>
+                    </select>
                   </div>
-                </Reveal>
-
-                {/* Map placeholder */}
-                <Reveal delay={2}>
-                  <div className="bg-white rounded-3xl p-8 shadow-card">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 rounded-xl bg-navy/10 flex items-center justify-center">
-                        <MapPin className="h-5 w-5 text-navy" />
-                      </div>
-                      <h3 className="font-display font-semibold text-navy">Our Location</h3>
-                    </div>
-                    <p className="text-medium-gray text-sm leading-relaxed mb-4">
-                      Texas, United States
-                    </p>
-                    <div className="rounded-none overflow-hidden bg-gray-100 h-64 border border-gray-200">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13735166.425232923!2d-106.6358178141443!3d31.116524249156098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864070360b823249%3A0x16eb1c8f1808de3c!2sTexas%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                      ></iframe>
-                    </div>
-                  </div>
-                </Reveal>
-              </div>
+                  <button type="submit" className="btn-primary w-full justify-center py-4">
+                    <Mail className="h-4 w-4" />
+                    Lets Build Your Business
+                  </button>
+                </form>
+              </Reveal>
             </div>
+
           </div>
         </div>
       </section>

@@ -5,7 +5,8 @@ import { services } from '@/data/services';
 
 const companyLinks = [
   { label: 'About Us', path: '/about' },
-  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Portfolio', path: 'https://linkin.bio/norvexmanagement/' },
+  { label: 'Join Our Team', path: '/join-team' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -55,16 +56,28 @@ export function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-white font-display font-semibold text-base mb-5">Company</h3>
             <ul className="space-y-3">
-              {companyLinks.map((l) => (
-                <li key={l.path}>
-                  <Link
-                    to={l.path}
-                    className="text-white/70 text-sm hover:text-gold transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+              {companyLinks.map((l) => {
+                const isExternal = l.path.startsWith('http');
+                if (isExternal) {
+                  return (
+                    <li key={l.path}>
+                      <a href={l.path} target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm hover:text-gold transition-colors">
+                        {l.label}
+                      </a>
+                    </li>
+                  );
+                }
+                return (
+                  <li key={l.path}>
+                    <Link
+                      to={l.path}
+                      className="text-white/70 text-sm hover:text-gold transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -89,17 +102,6 @@ export function Footer() {
           <div className="lg:col-span-3">
             <h3 className="text-white font-display font-semibold text-base mb-5">Get in Touch</h3>
             <ul className="space-y-4">
-              <li>
-                <a
-                  href="https://wa.me/923405463601"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-white/70 text-sm hover:text-gold transition-colors group"
-                >
-                  <Phone className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                  <span>+92 340 5463601</span>
-                </a>
-              </li>
               <li>
                 <a
                   href="mailto:norvexmanagement@gmail.com"

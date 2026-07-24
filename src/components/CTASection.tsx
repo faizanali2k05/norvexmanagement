@@ -24,9 +24,9 @@ export function CTASection({
               Get a Quote
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/portfolio" className="btn-outline">
+            <a href="https://linkin.bio/norvexmanagement/" target="_blank" rel="noopener noreferrer" className="btn-outline">
               View Our Work
-            </Link>
+            </a>
           </div>
         </div>
       </div>

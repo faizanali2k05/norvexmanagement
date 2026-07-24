@@ -37,10 +37,10 @@ export function Hero() {
                 Get a Quote
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link to="/portfolio" className="btn-outline text-base px-8 py-4">
+              <a href="https://linkin.bio/norvexmanagement/" target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-8 py-4">
                 <Play className="h-4 w-4" />
                 View Our Work
-              </Link>
+              </a>
             </div>
 
             {/* Mini stats */}

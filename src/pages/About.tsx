@@ -223,18 +223,9 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
-                <div className="group">
-                  <div className="relative rounded-2xl overflow-hidden mb-5 shadow-card">
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className={`w-full h-80 object-cover ${member.position || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
+                <div className="group border border-gray-200 hover:border-gold transition-colors duration-300 rounded-2xl p-6 shadow-card h-full flex flex-col items-center justify-center bg-white text-center">
                   <h3 className="font-display font-semibold text-navy text-lg">{member.name}</h3>
-                  <p className="text-medium-gray text-sm mt-1 mb-3">{member.role}</p>
+                  <p className="text-medium-gray text-sm mt-1 mb-4">{member.role}</p>
                   {member.linkedin && (
                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-navy/5 text-navy hover:bg-navy hover:text-white transition-colors">
                       <Linkedin className="w-4 h-4" />
@@ -244,11 +235,7 @@ export default function About() {
               </Reveal>
             ))}
           </div>
-          <Reveal delay={2}>
-            <p className="text-center text-medium-gray text-sm mt-10">
-              Team photos and bios are placeholders replace them with your actual team members.
-            </p>
-          </Reveal>
+
         </div>
       </section>
 

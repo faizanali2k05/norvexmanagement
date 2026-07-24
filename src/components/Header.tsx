@@ -7,8 +7,9 @@ const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
-  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Portfolio', path: 'https://linkin.bio/norvexmanagement/' },
   { label: 'Contact', path: '/contact' },
+  { label: 'Join Our Team', path: '/join-team' },
 ];
 
 export function Header() {
@@ -52,16 +53,21 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
             {navLinks.map((link) => {
               const active = location.pathname === link.path;
+              const isExternal = link.path.startsWith('http');
+              const classes = `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                active ? 'text-gold' : 'text-white/80 hover:text-white hover:bg-white/5'
+              }`;
+              
+              if (isExternal) {
+                return (
+                  <a key={link.path} href={link.path} target="_blank" rel="noopener noreferrer" className={classes}>
+                    {link.label}
+                  </a>
+                );
+              }
+
               return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    active
-                      ? 'text-gold'
-                      : 'text-white/80 hover:text-white hover:bg-white/5'
-                  }`}
-                >
+                <Link key={link.path} to={link.path} className={classes}>
                   {link.label}
                 </Link>
               );
@@ -95,14 +101,21 @@ export function Header() {
         <nav className="container-custom py-4 flex flex-col gap-1" aria-label="Mobile">
           {navLinks.map((link) => {
             const active = location.pathname === link.path;
+            const isExternal = link.path.startsWith('http');
+            const classes = `px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+              active ? 'text-gold bg-white/5' : 'text-white/90 hover:bg-white/5'
+            }`;
+
+            if (isExternal) {
+              return (
+                <a key={link.path} href={link.path} target="_blank" rel="noopener noreferrer" className={classes}>
+                  {link.label}
+                </a>
+              );
+            }
+
             return (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  active ? 'text-gold bg-white/5' : 'text-white/90 hover:bg-white/5'
-                }`}
-              >
+              <Link key={link.path} to={link.path} className={classes}>
                 {link.label}
               </Link>
             );

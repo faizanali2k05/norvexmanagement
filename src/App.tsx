@@ -11,6 +11,7 @@ import FAQ from '@/pages/FAQ';
 import Contact from '@/pages/Contact';
 import { PrivacyPolicy, Terms } from '@/pages/Legal';
 import NotFound from '@/pages/NotFound';
+import JoinTeam from '@/pages/JoinTeam';
 
 export default function App() {
   return (
@@ -24,11 +25,12 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/join-team" element={<JoinTeam />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

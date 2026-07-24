@@ -11,7 +11,7 @@ export function PrivacyPolicy() {
     {
       title: 'Information We Collect',
       content:
-        'We collect information you provide directly such as your name, email address, phone number, and company details when you fill out our contact form or subscribe to our newsletter. We also collect analytical data about how you use our website, including pages visited, time spent, and referral sources.',
+        'We collect information you provide directly such as your name, email address, and company details when you fill out our contact form or subscribe to our newsletter. We also collect analytical data about how you use our website, including pages visited, time spent, and referral sources.',
     },
     {
       title: 'How We Use Your Information',
@@ -46,7 +46,7 @@ export function PrivacyPolicy() {
     {
       title: 'Contact Us',
       content:
-        'If you have questions about this Privacy Policy or how we handle your data, contact us at norvexmanagement@gmail.com or via WhatsApp at +92 340 5463601.',
+        'If you have questions about this Privacy Policy or how we handle your data, contact us at norvexmanagement@gmail.com.',
     },
   ];
 
@@ -129,7 +129,7 @@ export function Terms() {
     {
       title: 'Contact',
       content:
-        'Questions about these terms can be directed to norvexmanagement@gmail.com or via WhatsApp at +92 340 5463601.',
+        'Questions about these terms can be directed to norvexmanagement@gmail.com.',
     },
   ];
 
