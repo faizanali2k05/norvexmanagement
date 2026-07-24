@@ -110,7 +110,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-white/70 text-sm hover:text-gold transition-colors"
                 >
                   <Mail className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                  <span>norvexmanagement@gmail.com</span>
+                  <span className="text-xs sm:text-sm break-all sm:break-normal">norvexmanagement@gmail.com</span>
                 </a>
               </li>
             </ul>
