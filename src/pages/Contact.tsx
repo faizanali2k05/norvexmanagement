@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Mail, Instagram, Linkedin, MapPin, Send, Check } from 'lucide-react';
+import { Mail, Instagram, Linkedin, MapPin, Send } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
-import { supabase } from '@/lib/supabase';
 
 const contactCards = [
   {
@@ -32,47 +31,22 @@ export default function Contact() {
   const [queryForm, setQueryForm] = useState({ name: '', email: '', query: '' });
   const [workForm, setWorkForm] = useState({ name: '', email: '', service: '' });
 
-  const [queryStatus, setQueryStatus] = useState<'idle' | 'submitting' | 'sent' | 'error'>('idle');
-  const [workStatus, setWorkStatus] = useState<'idle' | 'submitting' | 'sent' | 'error'>('idle');
-
-  const handleQuerySubmit = async (e: React.FormEvent) => {
+  const handleQuerySubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setQueryStatus('submitting');
-
-    const { error } = await supabase.from('contact_queries').insert({
-      name: queryForm.name,
-      email: queryForm.email,
-      query: queryForm.query,
-    });
-
-    if (error) {
-      console.error('Error saving query:', error);
-      setQueryStatus('error');
-      return;
-    }
-
-    setQueryStatus('sent');
-    setQueryForm({ name: '', email: '', query: '' });
+    const subject = encodeURIComponent(`New Query from ${queryForm.name}`);
+    const body = encodeURIComponent(
+      `Name: ${queryForm.name}\nEmail: ${queryForm.email}\n\nQuery:\n${queryForm.query}`
+    );
+    window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
   };
 
-  const handleWorkSubmit = async (e: React.FormEvent) => {
+  const handleWorkSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setWorkStatus('submitting');
-
-    const { error } = await supabase.from('project_requests').insert({
-      name: workForm.name,
-      email: workForm.email,
-      service: workForm.service,
-    });
-
-    if (error) {
-      console.error('Error saving project request:', error);
-      setWorkStatus('error');
-      return;
-    }
-
-    setWorkStatus('sent');
-    setWorkForm({ name: '', email: '', service: '' });
+    const subject = encodeURIComponent(`Work Inquiry from ${workForm.name}`);
+    const body = encodeURIComponent(
+      `Name: ${workForm.name}\nEmail: ${workForm.email}\nSpecialty: ${workForm.service}\n\nI am interested in working with you.`
+    );
+    window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const inputClass =
@@ -173,26 +147,10 @@ export default function Contact() {
                       placeholder="What would you like to ask?"
                     />
                   </div>
-                  <button
-                    type="submit"
-                    disabled={queryStatus === 'submitting'}
-                    className="btn-primary w-full justify-center py-4 disabled:opacity-60"
-                  >
-                    {queryStatus === 'sent' ? (
-                      <>
-                        <Check className="h-4 w-4" />
-                        Query Sent
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" />
-                        {queryStatus === 'submitting' ? 'Submitting...' : 'Submit Query'}
-                      </>
-                    )}
+                  <button type="submit" className="btn-primary w-full justify-center py-4">
+                    <Send className="h-4 w-4" />
+                    Submit Query
                   </button>
-                  {queryStatus === 'error' && (
-                    <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
-                  )}
                 </form>
               </Reveal>
             </div>
@@ -257,26 +215,10 @@ export default function Contact() {
                       <option>Customized Management Systems</option>
                     </select>
                   </div>
-                  <button
-                    type="submit"
-                    disabled={workStatus === 'submitting'}
-                    className="btn-primary w-full justify-center py-4 disabled:opacity-60"
-                  >
-                    {workStatus === 'sent' ? (
-                      <>
-                        <Check className="h-4 w-4" />
-                        Request Sent
-                      </>
-                    ) : (
-                      <>
-                        <Mail className="h-4 w-4" />
-                        {workStatus === 'submitting' ? 'Submitting...' : "Lets Build Your Business"}
-                      </>
-                    )}
+                  <button type="submit" className="btn-primary w-full justify-center py-4">
+                    <Mail className="h-4 w-4" />
+                    Lets Build Your Business
                   </button>
-                  {workStatus === 'error' && (
-                    <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
-                  )}
                 </form>
               </Reveal>
             </div>
