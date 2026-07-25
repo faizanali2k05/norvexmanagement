@@ -1,18 +1,31 @@
 import { useState } from 'react';
-import { Send, Users } from 'lucide-react';
+import { Send, Users, Check } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
+import { supabase } from '@/lib/supabase';
 
 export default function JoinTeam() {
   const [form, setForm] = useState({ name: '', email: '', service: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Job Application from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nService to work on: ${form.service}\n\nI would like to join the Norvex Management team.`
-    );
-    window.location.href = `mailto:norvexmanagement@gmail.com?subject=${subject}&body=${body}`;
+    setStatus('submitting');
+
+    const { error } = await supabase.from('job_applications').insert({
+      name: form.name,
+      email: form.email,
+      service: form.service,
+    });
+
+    if (error) {
+      console.error('Error saving job application:', error);
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sent');
+    setForm({ name: '', email: '', service: '' });
   };
 
   const inputClass =
@@ -98,10 +111,26 @@ export default function JoinTeam() {
                 </select>
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center py-4 mt-4">
-                <Send className="h-5 w-5" />
-                Submit Application
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="btn-primary w-full justify-center py-4 mt-4 disabled:opacity-60"
+              >
+                {status === 'sent' ? (
+                  <>
+                    <Check className="h-5 w-5" />
+                    Application Sent
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-5 w-5" />
+                    {status === 'submitting' ? 'Submitting...' : 'Submit Application'}
+                  </>
+                )}
               </button>
+              {status === 'error' && (
+                <p className="text-sm text-red-600 text-center">Something went wrong. Please try again.</p>
+              )}
             </form>
           </Reveal>
         </div>
