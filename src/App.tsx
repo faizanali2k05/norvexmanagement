@@ -12,6 +12,7 @@ import Contact from '@/pages/Contact';
 import { PrivacyPolicy, Terms } from '@/pages/Legal';
 import NotFound from '@/pages/NotFound';
 import JoinTeam from '@/pages/JoinTeam';
+import Admin from '@/pages/Admin';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/join-team" element={<JoinTeam />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
