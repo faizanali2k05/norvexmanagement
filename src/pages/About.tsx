@@ -18,7 +18,7 @@ const team = [
     name: 'Muhammad Sohaib', 
     role: 'Founder & CEO', 
     avatar: 'https://instagram.fmux1-1.fna.fbcdn.net/v/t51.82787-19/711925659_18096389359946753_2510541638306611633_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0&_nc_ht=instagram.fmux1-1.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2gFnWwAanj0JLxkPXUiVei-PhCZA-M5mL8I6A5IgmsAQcSUBGp8jEhPG_0Lo9h_udVs&_nc_ohc=l_HcAoj8pEMQ7kNvwEV_Az8&_nc_gid=iH7f8-GaUp5Me8fQFpiTBA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AQBfJAwAXBfXhqILIl2i1cJaGfJoLjloCYyAvpXfWP5Fxg&oe=6A683431&_nc_sid=7a9f4b',
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/chaudary-sohaib-56587441b/'
   },
   { 
     name: 'Ahmad Raza', 
@@ -27,6 +27,10 @@ const team = [
     linkedin: 'https://www.linkedin.com/in/ahmadraza2k09',
     position: 'object-top'
   },
+  {
+    name: 'Awab Rao',
+    role: 'Jr Outreacher'
+  }
 ];
 
 export default function About() {
@@ -225,7 +229,7 @@ export default function About() {
               <Reveal key={member.name} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
                 <div className="group border border-gray-200 hover:border-gold transition-colors duration-300 rounded-2xl p-6 shadow-card h-full flex flex-col items-center justify-center bg-white text-center">
                   <h3 className="font-display font-semibold text-navy text-lg">{member.name}</h3>
-                  <p className="text-medium-gray text-sm mt-1 mb-4">{member.role}</p>
+                  <p className={`text-medium-gray text-sm mt-1 ${member.linkedin ? 'mb-4' : ''}`}>{member.role}</p>
                   {member.linkedin && (
                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-navy/5 text-navy hover:bg-navy hover:text-white transition-colors">
                       <Linkedin className="w-4 h-4" />
