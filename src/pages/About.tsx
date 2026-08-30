@@ -28,6 +28,10 @@ const team = [
     position: 'object-top'
   },
   {
+    name: 'Muhammad Afnan',
+    role: 'Manager'
+  },
+  {
     name: 'Awab Rao',
     role: 'Jr Outreacher'
   }
