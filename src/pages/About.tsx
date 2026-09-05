@@ -34,6 +34,10 @@ const team = [
   {
     name: 'Awab Rao',
     role: 'Jr Outreacher'
+  },
+  {
+    name: 'Haris Ansari',
+    role: 'Jr. Outreacher'
   }
 ];
 
@@ -228,9 +232,9 @@ export default function About() {
               </p>
             </Reveal>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {team.map((member, i) => (
-              <Reveal key={member.name} delay={((i % 4) + 1) as 1 | 2 | 3 | 4}>
+              <Reveal key={member.name} delay={((i % 5) + 1) as 1 | 2 | 3 | 4 | 5}>
                 <div className="group border border-gray-200 hover:border-gold transition-colors duration-300 rounded-2xl p-6 shadow-card h-full flex flex-col items-center justify-center bg-white text-center">
                   <h3 className="font-display font-semibold text-navy text-lg">{member.name}</h3>
                   <p className={`text-medium-gray text-sm mt-1 ${member.linkedin ? 'mb-4' : ''}`}>{member.role}</p>
