@@ -34,10 +34,6 @@ const team = [
   {
     name: 'Awab Rao',
     role: 'Jr Outreacher'
-  },
-  {
-    name: 'Haris Ansari',
-    role: 'Jr. Outreacher'
   }
 ];
 
